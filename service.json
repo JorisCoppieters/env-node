@@ -1,0 +1,12 @@
+{
+    "service": {
+        "name": "dev-env-servicerator"
+    },
+    "docker": {
+        "image": {
+            "name": "dev-env-servicerator",
+            "version": "1.0.0"
+        },
+        "username": "joris"
+    }
+}
