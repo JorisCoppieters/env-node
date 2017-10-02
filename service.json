@@ -1,12 +1,40 @@
 {
-    "service": {
-        "name": "dev-env-servicerator"
-    },
     "docker": {
+        "container": {
+            "volumes": [
+                {
+                    "container": "/root/scripts",
+                    "host": "./scripts"
+                },
+                {
+                    "container": "/root/downloads",
+                    "host": "./downloads"
+                }
+            ]
+        },
         "image": {
-            "name": "dev-env-servicerator",
-            "version": "1.0.0"
+            "name": "env-node",
+            "tag_with_date": true,
+            "version": "1.0.2"
         },
         "username": "joris"
+    },
+    "service": {
+        "filesystem": [
+            {
+                "on_setup": true,
+                "path": "scripts",
+                "type": "folder"
+            },
+            {
+                "on_setup": true,
+                "path": "downloads",
+                "type": "folder"
+            }
+        ]
+    },
+    "version_control": {
+        "root_folder": "$BASE_DIR",
+        "type": "git"
     }
 }
